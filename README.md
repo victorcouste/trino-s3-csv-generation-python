@@ -16,7 +16,7 @@ You can also find a [Python code to test](https://github.com/victorcouste/trino-
 
 ![Architecture](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/architecture.png?raw=true)
 
-Architecture of the interaction between Starburst Galaxy and AWS environemtn (Glue, S3, Lambda).
+Architecture of the interaction between Starburst Galaxy and the AWS environment (Glue, S3, Lambda).
 
 ---
 
