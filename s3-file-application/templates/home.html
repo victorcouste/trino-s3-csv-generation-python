@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create CSV file in a S3 bucket from a Trino SQL query result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+<div class="section">
+    <div class="container">
+        <h1><b>Create CSV file in a S3 bucket from a <a href="https://www.starburst.io/platform/starburst-galaxy/">Starburst Galaxy</a> (Trino) SQL query result</b></h1>
+        <br>
+        &nbsp;&nbsp;&nbsp;<img src="{{ url_for('static', filename='galaxy.png') }}" width="20%" height="20%">
+        <br><br>
+        <form method="post" class="form-inline">
+            <table border="0">
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Table</label></td>
+                    <td>
+                        <select name="table">
+                            <option value="table_orc">table_orc</option>
+                            <option value="table_parquet">table_parquet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Columns</label></td>
+                    <td><input autofocus="autofocus" style="width:1000px" type="text" placeholder="Columns" name="columns"
+                               value="{{ columns }}"></td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Filter</label></td>
+                    <td><input autofocus="autofocus" style="width:1000px" type="text" placeholder="Filter" name="filter"
+                               value="{{ filter }}"></td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Output file name</label></td>
+                    <td><input style="width:200px" placeholder="Output file name"
+                               name="output_file" value="{{ output_file }}"></td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Output folder</label></td>
+                    <td><input style="width:200px" placeholder="Output folder"
+                               name="output_folder" value="{{ output_folder }}"></td>
+                </tr>
+                <tr style="height: 40px;">
+                    <td style="padding-right: 10px"><label>Method</label></td>
+                    <td>
+                        <select name="lambda_function">
+                            <option value="Lambda-Pandas">Pandas</option>
+                            <option value="Lambda-CTAS">CTAS</option>
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+            <button type="submit">Run query and create a CSV file</button>
+
+        </form>
+        <br>
+
+        <b>Result</b>
+        <br>
+        <br>
+        File URL : <a href="{{ file_creation_result['dataset_url'] }}" target="_blank">{{ file_creation_result["dataset_url"] }}</a><br>
+        Nb Rows  : {{ file_creation_result['nbrows'] }}<br>
+        Duration : {{ file_creation_result["duration"] }}<br>
+        Method   : {% if lambda_function == 'Lambda-CTAS' %} CTAS {% elif lambda_function == 'Lambda-Pandas' %} Pandas {% endif %}<br>
+        Table    : {{ table }}
+        <br>
+    </div>
+</div>
+</body>
+</html>
