@@ -1,4 +1,4 @@
-# CSV files generation from Trino with AWS Lambda
+# CSV file generation in S3 from Trino query with AWS Lambda
 
 This repository contains 2 examples of [Python AWS Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html) to generate a single CSV file in a S3 bucket from a Trino SQL query result.
 
