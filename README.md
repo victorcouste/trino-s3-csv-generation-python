@@ -4,14 +4,14 @@ This repository contains 2 examples of [Python AWS Lambda functions](https://doc
 
 Tests and examples are done with [Galaxy](https://www.starburst.io/platform/starburst-galaxy/), the Trino SaaS version, but it's the same for a hosted [Trino](https://www.trino.io) or [Starburst Enterprise](https://www.starburst.io/platform/starburst-enterprise) cluster.
 
-We describe here 2 options to generate CSV files:
+We use 2 different options to generate a CSV file:
 
-- From a CTAS (Create table query) query
-- Using a Python Pandas DataFrame object
+- With a CTAS (Create table) query
+- With a Python Pandas DataFrame object
 
 And to run these AWS Lambda functions, you will also need to add this [layer package](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/pandas_trino_layer.zip) in order to use [Trino Python library](https://github.com/trinodb/trino-python-client) and [Python pandas](https://pandas.pydata.org/) objects ([about Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-layer)).
 
-You can find also a [Python code to test](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/call_lambda.py) these functions and a Flask Web application using these functions.
+You can also find a [Python code to test](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/call_lambda.py) these functions and a Flask Web application using these functions.
 
 ---
 
