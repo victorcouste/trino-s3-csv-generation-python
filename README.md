@@ -13,6 +13,9 @@ And to run these AWS Lambda functions, you will also need to add this [layer pac
 
 You can also find a [Python code to test](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/call_lambda.py) these functions and a Flask Web application using these functions.
 
+
+![Architecture](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/architecture.png?raw=true)
+
 ---
 
 ## Function with a CTAS query
