@@ -2,7 +2,7 @@
 
 This repository contains 2 examples of [Python AWS Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html) to generate a single CSV file in a S3 bucket from a Trino SQL query result.
 
-Tests and examples are done with [Galaxy](https://www.starburst.io/platform/starburst-galaxy/), the Trino SaaS version, but it's the same for a hosted [Trino](https://www.trino.io) or [Starburst Enterprise](https://www.starburst.io/platform/starburst-enterprise) cluster.
+Tests and examples are done with [Starburst Galaxy](https://www.starburst.io/platform/starburst-galaxy/), the Trino SaaS version, but it's the same for a hosted [Trino](https://www.trino.io) or [Starburst Enterprise](https://www.starburst.io/platform/starburst-enterprise) cluster.
 
 We use 2 different options to generate a CSV file:
 
@@ -15,6 +15,8 @@ You can also find a [Python code to test](https://github.com/victorcouste/trino-
 
 
 ![Architecture](https://github.com/victorcouste/trino-s3-csv-generation-python/blob/main/architecture.png?raw=true)
+
+Architecture of the interaction between Starburst Galaxy and AWS environemtn (Glue, S3, Lambda).
 
 ---
 
